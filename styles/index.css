@@ -2,12 +2,12 @@
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.5;
+    font-size: 14px;
 }
 
 header {
     display: flex;
     justify-content: space-around;
-    flex-direction: row;
     width: 100%;
     padding: 10px 0px;
     background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(123, 209, 212) 91%);
@@ -17,27 +17,29 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 40px;
     width: 75%;
 }
 
 .photo {
+    cursor: pointer;
     display: flex;
-    height: 90px;
+    height: 100px;
     justify-content: end;
     align-self: center;
     width: 25%;
-    margin: 0px 20px 0px 0px;
+    margin: 0px 40px 0px 0px;
+    transition: .6s;
 }
 
 .photo:hover {
     cursor: pointer;
-    height: 150px;
+    height: 120px;
+    transform: scale(1.1);
 }
 
 main {
     border-top: solid 1px black;
-    width: 100%;
     background-color: mintcream;
     align-content: center;
 }
@@ -46,6 +48,7 @@ article {
     opacity: 0;
     transition: opacity 0.4s ease-in;
     display: flex;
+    align-items: center;
     flex-direction: column;
     margin: 0px 20px 0px 20px;
     padding: 10px 0px;
@@ -56,28 +59,54 @@ section {
     margin: 15px 0px;
     align-items: flex-start;
     justify-content: start;
-    width: 60%;
-    background: linear-gradient(0deg, rgb(255, 255, 255) 2%, rgb(123, 209, 212) 100%);
-    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2)
+    width: 45%;
+    background: rgb(123, 209, 212, 0.85);
+    box-shadow: 0px 4px 10px 2px rgba(34, 60, 80, 0.3)
 }
 
 h2 {
     margin-bottom: 8px;
+    font-size: 1.5em;
 }
-
+h3 {
+padding: 5px 0;
+}
 .sections {
     text-align: justify;
 }
-
-@media only screen and (max-device-width: 550px) {
-    h1 {
-        font-size: 170%;
-    }
-    section {
-        width: 100%;
-    }
+#add_contacts {
+    visibility: hidden;
+}
+.hovered {
+   visibility: visible !important;
+}
+    
+.ed_container {
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+.ed_dates {
+    width: 15%;
+    padding-right: 15px;
+}
+.ed_desc {
+    width: 75%;
+}
+.lang {
+    list-style-type:square;
 }
 
+@media only screen and (max-device-width: 1050px) {
+    section {
+        width: 90%;
+    }
+}
+@media (max-width: 415px){
+    article {
+        margin: 0 10px;
+    }
+}
 footer {
     display: flex;
     justify-content: space-around;

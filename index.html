@@ -7,51 +7,94 @@
     <title>CV Захарова Заріна</title>
     <link rel="stylesheet" href="styles/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(function(){
+    let timer;
+    $('.photo, #add_contacts').on('mouseenter mouseleave', ({type}) => {
+        if (type == 'mouseenter') {
+            clearTimeout(timer);
+            $("#add_contacts").addClass("hovered");
+        } else timer = setTimeout(() => $("#add_contacts").removeClass("hovered"), 300)
+      });
+    });
+    window.onload = function() {
+            document.getElementById("article").style.opacity = 1;
+    }
+    </script>
 </head>
 
 <body>
-    <script>
-        window.onload = function() {
-            document.getElementById("article").style.opacity = 1;
-        }
-    </script>
-    <header>
-
-        <div class="about">
-            <h1>Захарова Заріна</h1>
-            <p>Lviv <br>0932803159 <br><u>zrenamaharova@gmail.com</u></p>
-        </div>
-        <div class="photo">
-            <img src="images/photo.jpg" alt="фото Заріни Захарової">
-        </div>
-    </header>
+    <div class="header_container">
+        <header>
+            <div class="about">
+                <h1>Захарова Заріна</h1>
+                <p>Lviv <br>+380932803159 <br><u>zakharovazarinaz@gmail.com</u></p>
+                <div id="add_contacts">inst: <a href="https://www.instagram.com/zr1na.z/">@zr1na.z</a></div>
+            </div>
+            <div id="photo" class="photo">
+                <img src="images/photo.jpg" alt="фото Заріни Захарової">
+            </div>
+        </header>
+    </div>
     <main>
         <article id="article">
             <section>
-                <h2>Освіта</h2>
-                <p class="sections">На даний момент навчаюсь в Українській академії друкарства на факультеті ВПІТ "Видавничо-поліграфічні та інформаційні технології" спеціальності 186 "Видавництво та поліграфія" на 4-ому курсі. <br> Під час 3-ого курсу обрала дисципліни
-                    вільного вибору кафедри ІМТ "Кафедра інформаційних мультимедійних технологій", що передбачає поглиблене вивчення дисциплін, пов'язаних з IT-сферою.</p>
-            </section>
-            <section>
-                <h2>Вміння та навички</h2>
-                <p class="sections"> За 1.5 роки навчання я набула досвіду з:
-                    <ul>
-                        <li>веб-верстання (HTML&CSS)</li>
-                        <li>веб-програмування (основи Javascript, PHP)</li>
-                        <li>веб-дизайн (Figma)</li>
-                        <li>технології електронних видань (адміністрування сайтів за допомогою CMS системи Wordpress)</li>
-                    </ul>
-                    <br>За допомогою додаткових джерел (Youtube, курс "Основи веб-розробки" від Logos IT Academy, курс від Stepic "Веб-розробка: HTML та CSS" різноманітні навчальні сайти) поглибила знання в сфері Front-End (HTML, CSS, Javascript).
+                <h2>Вища освіта</h2>
+                <p class="sections">
+                    <div class="ed_container">
+                        <div class="ed_dates">
+                            <p><b>2022 - теп. час</b></p>
+                        </div>
+                        <div class="ed_desc">
+                            Магістр (186 "Видавництво та поліграфія")
+                            </br><b><i>Українська академія друкарства</i></b>
+                        </div>
+                    </div>
+                    <div class="ed_container">
+                        <div class="ed_dates">
+                            <p><b>2018 - 2022</b></p>
+                        </div>
+                        <div class="ed_desc">
+                            Бакалавр (186 "Видавництво та поліграфія")
+                            </br><b><i>Українська академія друкарства</i></b>
+                        </div>
+                    </div>
+                    <p>З 3-ого курсу поглиблено вивчала дисципліни, пов'язані з технологіями електронного видавництва та IT-сферою.</p>
                 </p>
             </section>
             <section>
-                <h2>Знання мов</h2>
+                <h2>Вміння та навички</h2>
+                <h3>Hard skills</h3>
+                <p class="sections"> 
+                    <ul>
+                        <li>знання HTML&CSS</li>
+                        <li>основи Javascript</li>
+                        <li>фреймворки/бібліотека jQuery, Bootstrap</li>
+                        <li>знання Figma</li>
+                        <li>досвід адміністрування сайтів за допомогою CMS (Wordpress)</li>
+                        <li>робота з Git, GitHub</li>
+                    </ul>
+                </p>
+                <h3>Soft skills</h3>
                 <p class="sections">
                     <ul>
+                        <li>можливість працювати під тиском</li>
+                        <li>мультизадачність</li>
+                        <li>підхід до кожного члена команди</li>
+                        <li>уважність до деталей</li>
+                        <li>відповідальне ставлення до реченців</li>
+                    </ul>
+                </p>
+            </section>
+        
+            <section>
+                <h2>Знання мов</h2>
+                <p class="sections">
+                    <ul class="lang">
                         <li>Українська - рідна</li>
-                        <li>Англійська - середній</li>
+                        <li>Англійська - на рівні читання документації</li>
                         <li>Німецька - початковий</li>
-                        <li>Російська - вільно</li>
                     </ul>
                 </p>
             </section>
@@ -61,7 +104,7 @@
                     <ul>
                         <li>Відео-монтаж</li>
                         <li>Створення ілюстрацій методом діджиталізації власних малюнків або обробки фото</li>
-                        <li>Піший туризм</li>
+                        <li>Складання пазлів, розгадування судоку</li>
                     </ul>
                 </p>
             </section>
